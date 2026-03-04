@@ -5,54 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justin's Texture Packs</title>
     <style>
-        /* 1. THE BACKGROUND */
+        /* 1. CORE STYLES */
         body {
             margin: 0;
             padding: 0;
-            /* Using the raw GitHub link for your image */
             background: url('https://raw.githubusercontent.com/NicoNathans/justins-tpacks/main/fQ0tzwF.png') no-repeat center center fixed;
             background-size: cover;
-            color: white;
-            font-family: "TW Cen MT", "Century Gothic", AppleGothic, sans-serif;
+            color: #eeeeee;
+            font-family: "TW Cen MT", "Century Gothic", sans-serif;
+            padding-bottom: 80px; /* Space for the sticky footer */
         }
 
-        /* 2. THE TEXT HEADER (Smaller) */
+        /* 2. SUBTLE HEADER */
         header {
             width: 100%;
-            padding: 30px 0; /* Reduced from 60px to 30px */
+            padding: 20px 0;
             text-align: center;
-            background: rgba(0, 0, 0, 0.6); /* Slightly darker for a sleeker look */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 15, 15, 0.85); /* Darker, more professional tint */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem; /* Reduced from 4rem to 2.5rem */
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            font-size: 1.8rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+            /* Title Case styling */
+            text-transform: capitalize; 
+            color: #ffffff;
         }
 
-        /* Main Content Area */
-        .content {
+        /* 3. THE TILES (Pack Rows) */
+        .container {
             max-width: 900px;
             margin: 40px auto;
-            padding: 25px;
-            background: rgba(0, 0, 0, 0.75);
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px); /* Slightly more blur for style */
+            padding: 0 20px;
         }
 
-        h2 {
-            font-size: 1.8rem;
+        .pack-tile {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
             margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, background 0.2s;
+            backdrop-filter: blur(5px);
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .pack-tile:hover {
+            transform: translateX(5px);
+            background: rgba(20, 20, 20, 0.85);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            background: #333; /* Placeholder color */
+            border-radius: 8px;
+            margin-right: 20px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .pack-info {
+            flex-grow: 1;
+        }
+
+        .pack-name {
+            font-size: 1.4rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .pack-desc {
+            font-size: 0.9rem;
+            margin: 5px 0 0 0;
+            color: #bbbbbb;
+            line-height: 1.3;
+        }
+
+        /* DOWNLOAD BUTTON */
+        .download-btn {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .download-btn:hover {
+            background: #4CAF50; /* Green highlight on hover */
+            transform: scale(1.1);
+        }
+
+        /* 4. STICKY FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
         }
     </style>
 </head>
@@ -62,10 +142,59 @@
         <h1>Justin's Texture Packs</h1>
     </header>
 
-    <div class="content">
-        <h2>Latest Releases</h2>
-        <p>Welcome! Browse my custom texture packs below.</p>
+    <div class="container">
+        
+        <div class="pack-tile">
+            <img src="1.png" class="thumbnail" alt="Pack Icon">
+            <div class="pack-info">
+                <p class="pack-name">Justins 100 subs tpack</p>
+                <p class="pack-desc">Justin's 100 subscribers special texture pack</p>
+            </div>
+            <a href="https://github.com/NicoNathans/justins-tpacks/raw/refs/heads/main/Justins%20100%20subs%20tpack.zip" class="download-btn" title="Download">⬇</a>
+        </div>
+
+        <div class="pack-tile">
+            <img src="2.png" class="thumbnail" alt="Pack Icon">
+            <div class="pack-info">
+                <p class="pack-name">Justin 8x</p>
+                <p class="pack-desc">an 8x texture pack :D</p>
+            </div>
+            <a href="https://github.com/NicoNathans/justins-tpacks/raw/refs/heads/main/Justin%208x.zip" class="download-btn" title="Download">⬇</a>
+        </div>
+
+        <div class="pack-tile">
+            <img src="3.png" class="thumbnail" alt="Pack Icon">
+            <div class="pack-info">
+                <p class="pack-name">Thai Pack 8x</p>
+                <p class="pack-desc">Idk why but Justin wanted a tpack with ts theme ig</p>
+            </div>
+            <a href="https://github.com/NicoNathans/justins-tpacks/raw/refs/heads/main/Thai%20Pack%208x.zip" class="download-btn" title="Download">⬇</a>
+        </div>
+
+        <div class="pack-tile">
+            <img src="4.png" class="thumbnail" alt="Pack Icon">
+            <div class="pack-info">
+                <p class="pack-name">The biggest bird tpack</p>
+                <p class="pack-desc">THE BIGGEST BIRD :O</p>
+            </div>
+            <a href="https://github.com/NicoNathans/justins-tpacks/raw/refs/heads/main/The%20biggest%20bird%20tpack.zip" class="download-btn" title="Download">⬇</a>
+        </div>
+
+        <div class="pack-tile">
+            <img src="5.png" class="thumbnail" alt="Pack Icon">
+            <div class="pack-info">
+                <p class="pack-name">another Justin 8x</p>
+                <p class="pack-desc">just another Justin 8x :P</p>
+            </div>
+            <a href="https://github.com/NicoNathans/justins-tpacks/raw/refs/heads/main/another%20Justin%208x.zip" class="download-btn" title="Download">⬇</a>
+        </div>
+
     </div>
+
+    <footer>
+        <a href="https://www.youtube.com/@Justin_BLOXD_15">Justin's YouTube Channel</a>
+        <a href="https://www.youtube.com/@NicoNathansBloxd">NicoNathans' YouTube Channel</a>
+    </footer>
 
 </body>
 </html>
